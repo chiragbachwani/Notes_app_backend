@@ -18,10 +18,12 @@ mongoose.connect(mongoDBpath).then(function(){
         const response  ={message:"API WORKS"};
         res.json(response);
     });
+  
     const noteRouter = require('./src/routes/Note')
     app.use('/notes',noteRouter);
 });
 
+mongoose.set('strictQuery', false);
 
 
 
